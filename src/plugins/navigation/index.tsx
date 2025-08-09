@@ -38,8 +38,8 @@ export default createPlugin({
         ),
         this.buttonContainer,
       );
-      const menu = document.querySelector('#right-content');
-      menu?.prepend(this.buttonContainer);
+      const menu = document.querySelector('#left-content');
+      menu?.append(this.buttonContainer);
     },
     stop() {
       this.buttonContainer.remove();
