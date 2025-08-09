@@ -98,7 +98,6 @@ export class DiscordService {
 
     const activityInfo: SetActivity = {
       type: ActivityType.Listening,
-      name: truncateString(songInfo.title, 128), // Song title
       details: truncateString(songInfo.title, 128), // Song title
       state: truncateString(songInfo.artist, 128), // Artist name
       largeImageKey: songInfo.imageSrc ?? undefined,
@@ -106,6 +105,7 @@ export class DiscordService {
         ? truncateString(songInfo.album, 128)
         : undefined,
       buttons: buildDiscordButtons(config, songInfo),
+      statusDisplayType: 2,
     };
 
     // Handle paused state display
